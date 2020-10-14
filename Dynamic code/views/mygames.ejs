@@ -1,0 +1,55 @@
+<%- include("snippets/header", {
+    pageName: "mygames"
+}) -%>
+
+<section class="mygames-recent-section container">
+    <div class="mygames-categories row">
+        <span class="float-left"><h2 class="section-head recent">Recent</h2></span>
+        <span class="float-left"><h2 class="section-subhead favorites">Favorites</h2></span>
+        <span class="float-left"><h2 class="section-subhead downloading">Downloading</h2></span>
+        <span class="float-left"><h2 class="section-subhead hidden">Hidden</h2></span>
+        <span class="float-left"><h2 class="section-subhead installed">Installed</h2></span>
+        <span class="float-left"><h2 class="section-subhead orgin-vault">Origin Vault</h2></span>		
+    </div>
+    <div class="mygames-gamelist-container">
+        <div class="mygames-recent">
+            <div class="row">
+                <% for(let i=0 ;i<6; i++){ %>
+                    <%- include("snippets/dealsGeneral", {
+                        gameName: "PUBG",
+                        price: 20,
+                        imagePath: "img/Game poster/pubg.jpg"
+                    }) -%>
+                <% } %>
+                <!-- <div class="col-md-2">
+                    <a href="#">
+                        <div class="image-holder">
+                            <img class="game-poster-potrait" src="img/Game poster/pubg.jpg" alt="GTA 5">
+                            <div class="download">
+                                <span class="download-text">Downloading - 40%</span>
+                                <div class="downloading-meter"><div></div></div>
+                            </div>
+                        </div>
+                        <div class="game-name">
+                            <span class="main">PUBG</span>
+                        </div>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mygames-allgames container">
+    <h2 class="section-head">All Games</h2>
+    <div class="row">
+        <% for(let i=0 ;i<8; i++){ %>
+            <%- include("snippets/dealsGeneral", {
+                gameName: "PUBG",
+                price: 20,
+                imagePath: "img/Game poster/pubg.jpg"
+            }) -%>
+        <% } %>
+    </div>	
+</section>
+
+<%- include("snippets/footer") -%>

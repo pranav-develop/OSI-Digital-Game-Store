@@ -1,0 +1,919 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+:root {
+	--background-image-size: 350px;
+	--main-back-color: #1a2329;
+	--general-text-color: #DDDDDD;
+	--body-back: #191919;
+}
+html{
+	padding: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+}
+body{
+	margin: auto;
+	padding: 0;
+	font-size: 16px;
+	/*font-family: 'PT Sans', sans-serif;*/
+	font-family: 'Balsamiq Sans', cursive;
+	background: var(--body-back);
+	color: #DDDDDD;
+	overflow-x: hidden;
+	letter-spacing: 0.4px;
+}
+ul li{
+	list-style-type: none;
+}
+a:hover{
+	text-decoration: none;
+}
+section{
+	position: relative;
+	padding:0;
+	margin: 0;
+	left:0;
+	width: 100%;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+span{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+.container{
+	padding: 0px;
+	background: var(--main-back-color);
+}
+.col{
+	padding: 0;
+}
+.float-left{
+	padding: 0;
+}
+
+.section-head{
+	font-size: 1.5rem;
+	color: #EFEFEF;
+	font-weight: 900;
+	padding: 40px;
+	margin-bottom: 0;
+	padding-bottom: 10px;
+}
+.section-subhead{
+	font-size: 1rem;
+	color: #828282;
+	text-align: bottom;
+	font-weight: 600;
+	padding: 47px 20px;
+	padding-bottom: 10px;
+}
+/*--------general styles finished-------------*/
+nav .container{
+	background:#17171B;
+}
+.navbar{
+	background: #17181d;
+	padding-bottom: 0;
+}
+.navbar-brand .logo{
+	margin-left: 10px;
+	width: 30px;
+	height: 30px;
+}
+.navbar-nav .nav-item{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.navbar-nav .nav-item:nth-child(1){
+	margin-left: 30px;
+}
+
+.navbar-nav .nav-link{
+	padding-bottom: 18px;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 1.17rem;
+	padding-top: 10px;
+	border-radius: 5px;
+}
+.active{
+	border-bottom: 3px solid #fe7901;
+}
+.navbar .additional-nav{
+	margin-left: auto;
+	margin-right: 40px;
+}
+.navbar .additional-nav a{
+	margin-left: 20px;
+}
+.navbar .additional-nav .profile{
+	border-radius: 50%;
+	max-height: 45px;
+	max-width: 45px;
+}
+.navbar .additional-nav .more-icons{
+	max-height: 30px;
+	max-width: 30px;	
+}
+
+/*-------Nav Styles end here-------*/
+header{
+	background-image: url("../img/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: var(--background-image-size);
+	color: #fff;
+	height: 500px;
+	postion: relative;
+}
+header .header-icons{
+	padding: 60px 40px;
+	font-size: 1.08rem;
+}
+.header-icons li a{
+	color:#D1D1D1;
+}
+.header{
+	box-sizing: border-box;
+	height: 750px;
+	background: var(--main-back-color);
+}
+header .header-icons .header-icons-left li{
+	padding: 7px 25px;
+	margin-left: -25px;
+	background-color: var(--main-back-color);
+}
+.header-icons-left li svg{
+	font-weight: 900;
+}
+header .header-icons .header-icons-left li:nth-child(1),header .header-icons .header-icons-left li:nth-child(5){
+	border-radius: 10px;
+	padding-left: 20px;
+}
+header .header-icons .header-icons-right li{
+	margin-left: 10px;
+	padding: 5px 15px;
+	background-color: var(--main-back-color);
+}
+header .header-icons .header-icons-right li:nth-child(1)
+{
+	padding: 0;
+	font-size: 2rem;
+}
+/*--------------------Slider----------------*/
+.slide_section{
+	position: relative;
+	height: 600px;
+}
+.hi-slide { 
+	position: relative; 
+	width: 100%; 
+	height: 400px; 
+	margin: 115px 0 0 ; 
+	padding-left: 16px;
+	padding-right: 16px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.hi-slide .hi-next,
+.hi-slide .hi-prev { 
+	position: absolute;
+	top: 50%; 
+	width: 40px;
+	height: 40px; 
+	margin-top: -20px;     
+	border-radius: 50px; 
+	line-height: 40px;
+	text-align: center; 
+	cursor: pointer;
+	background-color: #fff; 
+	color: black;               
+	transition: all 0.6s;
+	font-size: 20px; 
+	font-weight: bold;
+	z-index: 10;
+}
+.hi-slide .hi-prev{
+	margin-left: 130px;
+}
+.hi-slide .hi-next{
+	margin-right: 130px;
+}
+.hi-slide .hi-next:hover, 
+.hi-slide .hi-prev:hover {
+	opacity: 1; 
+	background-color: #fff;  
+}
+
+.hi-slide .hi-prev { left: -60px; }
+
+.hi-slide .hi-prev::before { content: '<'; }
+.hi-slide .hi-next { right: -60px; }
+.hi-slide .hi-next::before { content: '>'; }
+
+.hi-slide > ul{ 
+	list-style: none; 
+	position: relative;
+	width: 100%; 
+	height: 292px; 
+	margin: 0;
+	padding: 0;
+}
+
+
+.hi-slide > ul > li {
+	overflow: hidden; 
+	position: absolute; 
+	z-index: 0; 
+	left: 377px;
+	top: 146px; 
+	width: 0; 
+	height: 0; 
+	margin: 0; 
+	padding: 0;
+	border-radius: 20px;
+	background-color: #333; 
+	cursor: pointer; 
+}
+
+.hi-slide > ul > li > img {
+	width: 100%; height: 100%; background-position: center;
+}
+
+
+/*--------------special deals section----------------*/
+
+.special-deals .row{
+	padding: 5px 25px;
+}
+.special-deals .row div.col-md-3{
+	box-sizing: border-box;
+	position: relative;
+	padding: 20px 7px;
+}
+.image-holder img{
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	box-shadow: 2px 2px 2px #191919;
+}
+.image-holder .additional{
+	position: relative;
+}
+.image-holder .additional .percent-discount{
+	position: absolute;
+	right: 59px;
+	background-color: #4E9033;
+	bottom: 10px;
+	padding: 7px;
+	opacity: 0.8;
+	color:#E8E8E8;
+	z-index: 10;
+}
+.image-holder .additional .discout-price{
+	position: absolute;
+	right: 15px;
+	background-color: #0B0B0B;
+	bottom: 10px;
+	padding: 7px;
+	opacity: 0.8;
+	z-index: 10;
+	color: #E8E8E8;
+}
+.game-name{
+	text-align: center;
+	background: var(--body-back);
+	padding: 4px 0;
+	opacity: 0.9;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	box-shadow: 2px 2px 2px #191919;
+}
+.game-name .main{
+	color: #DDDDDD;
+	font-size: 0.89rem;
+}
+/*-----------special deals styles end-------------*/
+
+.treanding-section .row{
+	padding: 25px;
+}
+.treanding-section .image-holder{
+	height: 300px;
+	background: var(--main-back-color);
+}
+.wishlist{
+	padding: 4px;
+	position: absolute;
+	right: 30px;
+	background: hsla(0,0%,0%,0.00);
+	top: 20px;
+	border: none;
+	cursor: pointer;
+}
+.wishlist .bi-heart-fill{
+	display: none;
+	z-index: 10;
+	width: 1.4em;
+	height: 1.4em;
+}
+.wishlist .bi-heart{
+	display: block;
+	
+	opacity: 0.5;
+	width: 1.4em;
+	height: 1.4em;
+}
+.game-price{
+	position: absolute;
+	padding: 7px;
+	opacity: 0.8;
+	right: 20px;
+	bottom: 40px;
+	background-color: #0B0B0B;
+	z-index: 10;
+	color: #E8E8E8;
+}
+/*-----------latest release---------------*/
+.latest-releases .row{
+	padding: 25px;
+}
+.latest-releases .image-holder{
+	height: 300px;
+}
+.more .image-holder{
+	height: 300px;
+	background: var(--body-back);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.more .image-holder svg{
+	height: 2.3rem;
+	width: 2.3rem;
+	margin-top: 65%;
+	z-index: 10;
+}
+
+/*----------------action section--------------------*/
+.action-section .row{
+	padding: 25px;
+}
+.action-section .image-holder{
+	height: 300px;
+}
+/*-------------origin access----------------*/
+
+.origin-access div{
+	padding-top: 70px;
+	padding-bottoom: 70px;
+}
+
+/*----------------------load more------------------------*/
+div.load-more-cover{
+	width: 150px;
+	margin: auto;
+	padding: 30px 0 60px;
+}
+div.load-more{
+	text-align: center;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 20px;
+	background: var(--body-back);
+}
+/*-------------------copyright-------------------*/
+footer{
+	text-align: center;
+	width: 100%;
+}
+footer .copyright{
+	width: 100%;
+	padding: 20px;
+	background-color:#0F0F0F;
+	font-weight: 700;
+}
+
+/*------------------------------------------------------------------------------*/
+/*--------------------------------Home Page styles start------------------------*/
+/*------------------------------------------------------------------------------*/
+.main-page-content .main .main-head-box .section-head{
+	padding-left: 35px;
+}
+.main-page-content .main .main-head-box div{
+	font-size: 1rem;
+    color: #B7B7B7;
+    padding: 40px;
+	padding-right: 0px;
+    padding-bottom: 10px;
+}
+.main-page-content .main .main-head-box div span{
+	padding: 6px 24px;
+	background: var(--body-back);
+	border-radius: 10px;
+}
+.news-container .news-box{
+	background-color: #17171B;
+	position: relative;
+	border-radius: 20px;
+	height: 350px;
+	overflow: hidden;
+	margin: 60px 0px 30px 25px;
+}
+.news-container .news-box .news-img{
+	background: url("../img/Game poster/deablo.jpeg") center no-repeat;
+	background-size: cover;
+	width: 35%;
+	height: 50%;
+}
+.news-container .news-box .news-head{
+	bottom: 0px;
+	left: 0px;
+	height: 100%;
+	width: 35%;
+	background-color: #1C1D25;
+}
+.news-container .news-box .news-head .news-heading{
+	font-size: 1.05rem;
+	font-weight: 400;
+	padding: 8% 10% 0 10%;
+}
+.news-container .news-box .news-head .news-sub{
+	padding-left: 11%;
+	font-size: 0.9rem;
+	color: #5E5E5E;
+}
+.news-container .news-box .news-head .patch{
+	padding-left: 10%;
+	font-size: 0.8rem;
+}
+.news-container .news-box .news-head .patch span{
+	padding: 6px 15px;
+	background-color: #17181F;
+	border-radius: 5px;
+}
+#read-more-home1{
+	display: block;
+	z-index: 10;
+}
+#read-less-home1{
+	display: none;
+	z-index: -1;
+}
+#read-more-home2{
+	display: block;
+	z-index: 10;
+}
+#read-less-home2{
+	display: none;
+	z-index: -1;
+}
+#read-more-home3{
+	display: block;
+	z-index: 10;
+}
+#read-less-home3{
+	display: none;
+	z-index: -1;
+}
+.news-container .news-box .news-desc{
+	width: 65%;
+	position: absolute;
+	height: 100%;
+	background-color: #17181F;
+	right: 0px;
+	top: 0px;
+	padding: 40px;
+}
+.news-container .news-box .news-desc .head{
+	font-size: 1.3rem;
+	padding-bottom: 10px;
+}
+.news-container .news-box .news-desc p{
+	color: #5E5E5E;
+}
+.news-container .news-box .news-desc span{
+	position: absolute;
+	width: 100%;
+	background: #17181F;
+	height: 100px;
+	padding-top: 30px;
+	bottom: 0px;
+	font-weight: 400;
+	color: #fe7901;
+}
+.news-container .news-box .news-desc span a{
+	cursor: pointer;
+}
+/*-------------------Friends Section-----------------------*/
+.main-page-content .additional-home .friends-section{
+	padding-right: 20px;
+}
+.main-page-content .additional-home .friends-no{
+	font-size: 1.2rem;
+	color: #5E5E5E;
+}
+.friends-container .friends{
+	border-radius: 15px;
+	position: relative;
+	background-color: #17181F;
+	margin: 10px 0;
+	padding: 20px;
+	width: 100%;
+	height: 80px;
+}
+.friends-container .friends .friend-img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.friends-container .friends .friend-details{
+	padding: 0 5%;
+}
+.friends-container .friends .friend-details .user-name{
+	font-size: 1.25rem;
+    font-weight: 500;
+}
+.friends-container .friends .friend-details .status{
+	font-size: 0.9rem;
+}
+.friends-container .friends .friend-details .playing{
+	color: #fe7901;
+}
+.friends-container .friends .friend-details .online{
+	color: #0B6310;
+}
+.friends-container .friends .friend-details .offline{
+	color: #454545;
+}
+.friends-container .friends .more-options{
+	padding: 10px;
+	background: var(--main-back-color);
+	border-radius: 5px;
+	cursor: pointer;
+}
+.more-options-block-friends{
+	position: absolute;
+	z-index: 10;
+	background-color: #17181F;
+	text-align: left;
+	border-radius: 15px;
+	right: -120px;
+	top: 80%;
+}
+.more-options-block-friends ul{
+	list-style-type: none;
+	padding-left: 0;
+	padding: 20px;
+	margin: 0px;
+}
+.more-options-block-friends ul li{
+	list-style-type: none;
+	padding: 4px;
+	cursor: pointer;
+}
+.more-items{
+	color: #fe7901;
+	font-size: 0.9rem;
+	margin-top: 25px;
+	cursor: pointer;
+}
+.additional-home .section-head{
+	padding-left: 0;
+}
+/*---------------lastest release----------------*/
+.latest-releases-home{
+	padding-right: 15px;
+}
+.latest-releases-home .games-box{
+	box-sizing: border-box;
+	position: relative;
+	padding: 15px 7px;
+}
+.latest-releases-home .games-box .image-holder img{
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+.latest-releases-home .games-box .game-name{
+	background: transparent;
+	text-align: left;
+	border-radius: 0px;
+	padding-top: 10px;
+	box-shadow: none;
+}
+.latest-releases-home .more-items{
+	margin-top: 5px;
+}
+
+
+/*------------------------------------------------------------------------------*/
+/*--------------------------------Mygames page styles start------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.mygames-categories .section-head{
+	padding-right: 20px;
+	cursor: pointer;
+}
+.mygames-categories .section-subhead{
+	cursor: pointer;
+}
+.mygames-gamelist-container{
+	width: 100%;
+}
+.mygames-gamelist-container .row{
+	padding: 25px;
+}
+.mygames-gamelist-container .image-holder{
+	height: 300px;
+	position: relative;
+}
+.download{
+	position: absolute;
+	z-index: 10;
+	bottom: 0px;
+	height: 20%;
+	width: 100%;
+	padding: 10px;
+	margin: 0px;
+	background:hsla(0,6%,3%,0.9);	
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: 100;
+	color: green;
+}
+.download .downloading-meter{
+	width: 90%;
+	margin: auto;
+	margin-top: 5px;
+	align-self: center;
+	overflow: hidden;
+	border-radius: 20px;
+	height: 30%;
+	background: #161616;
+}
+.download .downloading-meter div{
+	background: darkgreen;
+	width: 40%;
+	height: 100%;
+}
+/*--------------------all games--------------------*/
+.mygames-allgames{
+	width: 100%;
+}
+.mygames-allgames .row{
+	padding: 25px;
+}
+.mygames-allgames .image-holder{
+	height: 300px;
+	position: relative;
+}
+.game-play-button{
+	position: absolute;
+	display: none;
+	z-index: 10;
+	bottom: 0px;
+	width: 100%;
+	padding: 10px;
+	margin: 0px;
+	background:hsla(0,0%,4%,0.9);
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: 100;
+	cursor: default;
+}
+.game-play-button .play-button-text{
+	width: 100%;
+	margin: auto;
+	padding: 5% 30%;
+	align-self: center;
+	overflow: hidden;
+	border-radius: 20px;
+	height: 20%;
+	color: #DDDDDD;
+	cursor: pointer;
+	background:hsla(111,66%,18%,0.85);
+}
+.mygames-allgames .image-holder:hover .game-play-button{
+	display: block;
+}
+.mygames-allgames div.col-md-2{
+	margin-top: 20px;
+}
+
+/*----------------------------------------------------------------------------*/
+/*--------------------------origin access-------------------------------------*/
+/*----------------------------------------------------------------------------*/
+
+.origin-membership .origin-head{
+	width: 100%;
+}
+.origin-membership .col{
+	box-sizing: border-box;
+}
+.origin-price-box{
+	width: 75%;
+	margin: auto;
+	background: #12181d;
+	border-radius: 20px;
+}
+.origin-price-box .category{
+	padding: 10px;
+	padding-left: 30px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	width: 38%;
+}
+.origin-price-box .category .section-head{
+	font-size: 1.2rem;
+	padding: 10px 10px;
+	font-weight: 600;
+}
+.origin-price-box .category .section-subhead{
+	padding: 10px 10px; 
+	font-weight: 500;
+	font-size: 0.85rem;
+}
+.origin-price-box .category .row{
+	padding: 10px 15px;
+	padding-right: 0px;
+}
+
+
+.origin-price-box .basic{
+	width: 28%;
+	box-sizing: border-box;
+	margin-right: 5px;
+	border-radius: 20px;
+	overflow: hidden;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	background-color: #1e262c;
+}
+.origin-price-box .basic .section-head{
+	font-size: 1.2rem;
+	padding: 20px 10px;
+	width: 100%;
+	text-align: center;	
+	letter-spacing: 0.7px;
+	background-color: #303941;
+	font-weight: 600;
+}
+.origin-price-box .basic .section-subhead{
+	padding: 18px 10px; 
+	font-weight: 800;
+	width: 100%;
+	font-size: 0.98rem;
+	margin-bottom: 0;
+	color: #DDDDDD;
+	text-align: center;
+}
+.origin-price-box .basic .row{
+	padding: 10px 15px;
+}
+.origin-price-box .basic .row:nth-child(1){
+	padding-top: 0px;
+}
+.origin-price-box .basic .row:nth-child(7){
+	padding-bottom: 0px;
+}
+.origin-price-box .basic .row:nth-child(7) .section-subhead{
+	background-color: #303941;
+	font-size: 1.1rem;
+	letter-spacing: 0.7px;
+}
+.origin-price-box .basic svg{
+	width: 1.2rem;
+	height: 1.2rem;
+}
+
+.origin-price-box .premier{
+	width: 28%;
+	margin-left: 10px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	overflow: hidden;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	background-color: #2d1107;
+}
+.origin-price-box .premier .section-head{
+	font-size: 1.2rem;
+	padding: 20px 10px;
+	width: 100%;
+	text-align: center;
+	background-color: #9f2d03;
+	font-weight: 600;
+}
+.origin-price-box .premier .section-subhead{
+	padding: 18px 10px; 
+	font-weight: 800;
+	width: 100%;
+	font-size: 0.98rem;
+	margin-bottom: 0;
+	color: #DDDDDD;
+	text-align: center;
+}
+.origin-price-box .premier .row{
+	padding: 10px 15px;
+}
+.origin-price-box .premier .row:nth-child(1){
+	padding-top: 0px;
+}
+.origin-price-box .premier .row:nth-child(7){
+	padding-bottom: 0px;
+}
+.origin-price-box .premier .row:nth-child(7) .section-subhead{
+	background-color: #9f2d03;
+	font-size: 1.1rem;
+	letter-spacing: 0.7px;
+}
+
+.origin-price-box .premier svg{
+	width: 1.2rem;
+	height: 1.2rem;
+}
+
+/*----------------------latest premier access games----------------------------*/
+
+.latest-premier-access .row{
+	padding: 25px;
+}
+.latest-premier-access .image-holder{
+	height: 300px;
+}
+
+/*----------------------------upcoming premier---------------------------------*/
+.upcoming-premier{
+	padding-top: 60px;
+}
+
+/*------------------------origin vault game library-----------------------------*/
+.origin-vault-game-lib{
+	padding-top: 50px;
+}
+.origin-vault-game-lib .row{
+	padding: 25px;
+	padding-top: 0px;
+}
+.origin-vault-game-lib .image-holder{
+	height: 300px;
+}
+.origin-vault-game-lib div.col-md-2 {
+    margin-top: 20px;
+}
+
+/*----------------------------------origin faq---------------------------------*/
+.origin-faq{
+	background-color: #12181d;
+}
+
+.origin-faq-container{
+	width: 80%;
+	margin: auto;
+	padding: 40px 20px;
+	overflow: hidden;
+}
+.origin-faq-container .section-head{
+	padding-left: 0px;
+	font-size: 2rem;
+	font-weight: 900;
+}
+.origin-faq-container .row{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.origin-faq-container .col{
+	background-color: var(--main-back-color);
+	width: 100%;
+	padding: 20px 20px;
+	margin-left: 10px; 
+	margin-right: 10px;
+	border-radius: 15px;
+	color: hsla(0,0%,64%,1.00);
+}
+.origin-faq-container .col p{
+	width: 85%;
+}
+.origin-faq-container .col span{
+	position: absolute;
+	right: 20px;
+	bottom: 45%;
+}
+.origin-faq-container .col span svg{
+	width: 1.3rem;
+	height: 1.3rem;
+	font-weight: 900;
+	cursor: pointer;
+}
+.origin-faq-container .load-more-cover .load-more{
+	background-color: var(--main-back-color);
+}
+
+
+
+
+

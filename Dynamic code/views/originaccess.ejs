@@ -1,0 +1,143 @@
+<%- include("snippets/header", {
+    pageName: "originaccess"
+}) -%>
+
+<section class="origin-membership container">
+    <img class="origin-head" src="img/price-origin.PNG" alt="">
+    <div class="origin-price-box">
+        <div class="row">
+            <div class="category">
+                <div class="row">
+                    <h2 class="section-head">What are you getting?</h2>
+                </div>
+                <div class="row">
+                    <h5 class="section-subhead">Price</h5>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">Extra content included with new EA games <br>
+                        (+ MTX bonuses and expansion packs)
+                    </p>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">Early access to upcoming games</p>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">Evolving collection of games</p>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">10% off Origin purchases</p>
+                </div>
+                <div class="row">
+                    
+                </div>
+            </div>
+            
+            <div class="basic">
+                <div class="row">
+                    <h2 class="section-head">Basic</h2>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">$3.99/month or $29.99/year</p>
+                </div>
+                <div class="row">
+                    <span class="section-subhead">
+                        <svg class="bi bi-x" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+                        <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">10 hours trial</p>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">224</p>
+                </div>
+                <div class="row">
+                    <span class="section-subhead">
+                        <svg class="bi bi-check2" viewBox="0 0 16 16" fill="green" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="row">
+                    <a href="#" class="section-subhead">Join Basic</a>
+                </div>
+            </div>
+            
+            <div class="premier">
+                <div class="row">
+                    <h2 class="section-head">Premier</h2>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">$14.99/month or $99.99/year</p>
+                </div>
+                <div class="row">
+                    <span class="section-subhead">
+                        <svg class="bi bi-check2" viewBox="0 0 16 16" fill="green" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">Full Game</p>
+                </div>
+                <div class="row">
+                    <p class="section-subhead">240</p>
+                </div>
+                <div class="row">
+                    <span class="section-subhead">
+                        <svg class="bi bi-check2" viewBox="0 0 16 16" fill="green" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="row">
+                    <a href="#" class="section-subhead">Join Premier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="latest-premier-access container">
+    <h2 class="section-head">Latest Premier Access Games</h2>
+    <div class="row">
+        <% for(let i=0 ;i<5; i++){ %>
+            <%- include("snippets/dealsGeneral", {
+                gameName: "PUBG",
+                price: 20,
+                imagePath: "img/Game poster/pubg.jpg"
+            }) -%>
+        <% } %>
+    </div>
+</section>
+
+<section class="upcoming-premier container">
+    <img src="img/upcomingpremier.PNG" alt="">
+</section>
+
+<section class="origin-vault-game-lib container">
+    <h2 class="section-head">Origin Vault Game Library</h2>
+    <div class="row">
+        <% for(let i=0 ;i<12; i++){ %>
+            <%- include("snippets/dealsGeneral", {
+                gameName: "PUBG",
+                price: 20,
+                imagePath: "img/Game poster/pubg.jpg"
+            }) -%>
+        <% } %>
+    </div>
+</section>
+
+<div class="container">
+    <div class="load-more-cover">
+        <div class="load-more">
+            <span>Load More...</span>
+        </div>
+    </div>
+</div>
+
+<%- include("snippets/faq") -%>
+
+<%- include("snippets/footer") -%>

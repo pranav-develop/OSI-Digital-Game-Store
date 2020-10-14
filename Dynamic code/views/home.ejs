@@ -1,0 +1,217 @@
+<%- include("snippets/header", {
+    pageName: "home"
+}) -%>
+
+<section class="main-page-content container">
+    <div class="row">
+        <div class="main col-md-9">
+            <div class="main-head-box">
+                <h2 class="section-head float-left">News</h2>
+                <div>
+                    <span class="float-right">Filters
+                        <svg class="bi bi-chevron-down" width="1.05em" height="1.05em" viewBox="0 0 16 16" fill="#DDDDDD" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="news-container">
+                <% for(let i=0; i<3; i++){ %>
+                    <div class="news-box news-box-1">
+                        <div class="news-img">
+                            <!--img src="img/Game poster/deablo.jpeg" alt=""-->
+                        </div>
+                        <div class="news-head float-left">
+                            <h3 class="news-heading">Diablo Reaper Of Souls</h3>
+                            <p class="news-sub">
+                                November 1, 2019 <br>
+                                1 min Read
+                            </p>
+                            <p class="patch"><span>Patch Notes</span></p>
+                        </div>
+                        <div class="news-desc">
+                            <h3 class="head">Quality of Life Update</h3>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using<br> Lorem Ipsum is that it has a more-or-less normal distribution of letters<br>, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and we<br>b page editors now use Lorem Ipsum as their default model text, a<br>nd a search for 'lorem ipsum' will u<br>ncover many web sites still in<br> their infancy. Various versions have evolveD.
+                            </p>
+                            <span>
+                                <a id="read-more-home1" onclick="showbox1();">
+                                    Read More
+                                    <svg class="bi bi-chevron-down" width="1.05em" height="1.05em" viewBox="0 0 16 16" fill="#fe7901" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </a>
+                                <a id="read-less-home1" onclick="hidebox1();">
+                                    Read Less
+                                    <svg class="bi bi-chevron-up" width="1.05rem" height="1.05rem" viewBox="0 0 16 16" fill="#fe7901" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                                    </svg>
+                                </a>
+                            </span>
+                        
+                        </div>
+                    </div>
+                <% } %>
+                <!-- <div class="news-box news-box-1">
+                    <div class="news-img"> -->
+                        <!--img src="img/Game poster/deablo.jpeg" alt=""-->
+                    <!-- </div>
+                    <div class="news-head float-left">
+                        <h3 class="news-heading">Diablo Reaper Of Souls</h3>
+                        <p class="news-sub">
+                            November 1, 2019 <br>
+                            1 min Read
+                        </p>
+                        <p class="patch"><span>Patch Notes</span></p>
+                    </div>
+                    <div class="news-desc">
+                        <h3 class="head">Quality of Life Update</h3>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using<br> Lorem Ipsum is that it has a more-or-less normal distribution of letters<br>, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and we<br>b page editors now use Lorem Ipsum as their default model text, a<br>nd a search for 'lorem ipsum' will u<br>ncover many web sites still in<br> their infancy. Various versions have evolveD.
+                        </p>
+                        <span>
+                            <a id="read-more-home1" onclick="showbox1();">
+                                Read More
+                                <svg class="bi bi-chevron-down" width="1.05em" height="1.05em" viewBox="0 0 16 16" fill="#fe7901" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                            <a id="read-less-home1" onclick="hidebox1();">
+                                Read Less
+                                <svg class="bi bi-chevron-up" width="1.05rem" height="1.05rem" viewBox="0 0 16 16" fill="#fe7901" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                                </svg>
+                            </a>
+                        </span>
+                    
+                    </div>
+                </div>
+                <div class="news-box">
+                    <div class="news-img"> -->
+                        <!--img src="img/Game poster/deablo.jpeg" alt=""-->
+                    <!-- </div>
+                    <div class="news-head float-left">
+                        <h3 class="news-heading">Diablo Reaper Of Souls</h3>
+                        <p class="news-sub">
+                            November 1, 2019 <br>
+                            1 min Read
+                        </p>
+                        <p class="patch"><span>Patch Notes</span></p>
+                    </div>
+                    <div class="news-desc">
+                        <h3 class="head">Quality of Life Update</h3>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using<br> Lorem Ipsum is that it has a more-or-less normal distribution of letters<br>, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and we<br>b page editors now use Lorem Ipsum as their default model text, a<br>nd a search for 'lorem ipsum' will u<br>ncover many web sites still in<br> their infancy. Various versions have evolveD.
+                        </p>
+                        <span>
+                            <a>
+                                Read More
+                                <svg class="bi bi-chevron-down" width="1.05em" height="1.05em" viewBox="0 0 16 16" fill="#fe7901" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                        </span>
+                    
+                    </div>
+                </div>
+                <div class="news-box">
+                    <div class="news-img"> -->
+                        <!--img src="img/Game poster/deablo.jpeg" alt=""-->
+                    <!-- </div>
+                    <div class="news-head float-left">
+                        <h3 class="news-heading">Diablo Reaper Of Souls</h3>
+                        <p class="news-sub">
+                            November 1, 2019 <br>
+                            1 min Read
+                        </p>
+                        <p class="patch"><span>Patch Notes</span></p>
+                    </div>
+                    <div class="news-desc">
+                        <h3 class="head">Quality of Life Update</h3>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using<br> Lorem Ipsum is that it has a more-or-less normal distribution of letters<br>, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and we<br>b page editors now use Lorem Ipsum as their default model text, a<br>nd a search for 'lorem ipsum' will u<br>ncover many web sites still in<br> their infancy. Various versions have evolveD.
+                        </p>
+                        <span>
+                            <a>
+                                Read More
+                                <svg class="bi bi-chevron-down" width="1.05em" height="1.05em" viewBox="0 0 16 16" fill="#fe7901" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                        </span>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="additional-home col-md-3">
+            <div class="friends-section">
+                <h2 class="section-head">Friends 
+                    <span class="friends-no">(2/10)</span>
+                </h2>
+                <div class="friends-container">
+                    <% for(let i=0; i<3; i++){ %>
+                        <%- include("snippets/friends") %>
+                    <% } %>
+                    <span class="more-items float-right">All Friends
+                        <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="latest-releases-home">
+                <h2 class="section-head">Latest Releases</h2>
+                <div class="games-box col-md-12">
+                    <a href="#">
+                        <div class="image-holder">
+                            <img class="gameposter-landscape" src="img/Game poster/uncharted2.jpg" alt="uncharted 2">
+                        </div>
+                        <div class="game-name">
+                            <span class="main">November 15, 2019</span><br>
+                        </div>
+                    </a>
+                </div>
+                <div class="games-box col-md-12">
+                    <a href="#">
+                        <div class="image-holder">
+                            <img class="gameposter-landscape" src="img/Game poster/uncharted2.jpg" alt="uncharted 2">
+                            <div class="additional">
+                                <p class="percent-discount float-right">-40%</p>
+                                <p class="discout-price float-right">$20</p>
+                            </div>
+                        </div>
+                        <div class="game-name">
+                            <span class="main">November 15, 2019</span><br>
+                        </div>
+                    </a>
+                </div>
+                <div class="games-box col-md-12">
+                    <a href="#">
+                        <div class="image-holder">
+                            <img class="gameposter-landscape" src="img/Game poster/uncharted2.jpg" alt="uncharted 2">
+                            <div class="additional">
+                                <p class="percent-discount float-right">-40%</p>
+                                <p class="discout-price float-right">$20</p>
+                            </div>
+                        </div>
+                        <div class="game-name">
+                            <span class="main">November 15, 2019</span><br>
+                        </div>
+                    </a>
+                </div>	
+                <span class="more-items float-right">More in Store
+                    <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="load-more-cover">
+        <div class="load-more">
+            <span>Load More...</span>
+        </div>
+    </div>
+</div>
+
+<%- include("snippets/footer") -%>

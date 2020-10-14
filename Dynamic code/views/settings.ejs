@@ -1,0 +1,145 @@
+<%- include("snippets/header",{
+    pageName: "settings"
+}) %>
+
+<section class="settings container">
+    <div>
+        <h3 class="section-head">Settings</h3>
+        <div class="row">
+            <div class="col-md-2 options">
+                <div><a class="settings1 selected" onclick="showMySettings('application-settings')" href="#">Application</a></div>
+                <div><a class="settings2" onclick="showMySettings('diagnostics')" href="#">Diagnostics</a></div>
+                <div><a class="settings3" href="#">Install & Saves</a></div>
+                <div><a class="settings4" href="#">Notifications</a></div>
+                <div><a class="settings5" href="#">In-Game</a></div>
+                <div><a class="settings5" href="#">Voice</a></div>
+            </div>
+            <div class="col-md-9 settings-options">
+                <div class="application-settings d-block">
+                    <div class="option-category row">
+                        <h3 class="section-head">Application Settings</h3>
+                        <div class="settings-box">
+                            <h4>Default Screen</h4>
+                            <div class="selected-options dropdown">
+                                <select name="cars" id="cars">
+                                    <option value="Game Libery">Game Liberary</option>
+                                    <option value="Home Page">Home Page</option>
+                                    <option selected value="Store(Default)">Store(Default)</option>
+                                    <option value="Profile Page">Profile Page</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <h4>Language</h4>
+                            <div class="selected-options dropdown">
+                                <select name="cars" id="cars">
+                                    <option value="english">English(Default)</option>
+                                    <option value="japanese">Japanese</option>
+                                    <option value="russian">Russian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <h4>Show Origin at End</h4>
+                            <div class="selected-options checkbox">
+                                <input type="checkbox" name="origin-at-end">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-category row">
+                        <h3 class="section-head">Download Restrictions</h3>
+                        <div class="settings-box">
+                            <h4>Maximum download rate when out of the game</h4>
+                            <div class="selected-options dropdown">
+                                <select name="cars" id="cars">
+                                    <option selected value="nolimit">No Limit</option>
+                                    <option value="1mbps">1 Mbps</option>
+                                    <option value="5mbps">5 Mbps</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <h4>Maximum download rate during gameplay</h4>
+                            <div class="selected-options dropdown">
+                                <select name="cars" id="cars">
+                                    <option selected value="nolimit">No Limit</option>
+                                    <option value="1mbps">1 Mbps</option>
+                                    <option value="5mbps">5 Mbps</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-category row">
+                        <h3 class="section-head">Client Updates</h3>
+                        <div class="settings-box">
+                            <h4>Automatic Game Updates</h4>
+                            <div class="selected-options checkbox">
+                                <input type="checkbox" name="origin-at-end" checked>
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <h4>Automatic Origin Updates</h4>
+                            <div class="selected-options checkbox">
+                                <input type="checkbox" name="origin-at-end" checked>
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <h4>Participate in Origin client betas</h4>
+                            <div class="selected-options checkbox">
+                                <input type="checkbox" name="origin-at-end">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diagnostics d-none">
+                    <div class="option-category row">
+                        <h3 class="section-head">Help Improve Origin</h3>
+                        <div class="settings-box">
+                            <h4>Share Hardware Info</h4>
+                            <div class="selected-options checkbox">
+                                <input type="checkbox" name="origin-at-end" checked>
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <h4>Share System Interaction Data</h4>
+                            <div class="selected-options checkbox">
+                                <input type="checkbox" name="origin-at-end">
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <h4>Origin crash reporting</h4>
+                            <div class="selected-options dropdown">
+                                <select name="cars" id="cars">
+                                    <option value="always">Always Send</option>
+                                    <option selected value="ask">Ask Before Sending</option>
+                                    <option value="never">Never Send</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-category row">
+                        <h3 class="section-head">Troubleshooting</h3>
+                        <div class="settings-box">
+                            <h4>Origin In-Game logging</h4>
+                            <div class="selected-options checkbox">
+                                <input type="checkbox" name="origin-at-end" checked>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="having-question">
+                    <div>
+                        Have Questions?<br/>
+                        <a href="#">Visit our support site</a> for more in-depth help and information.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%- include("snippets/footer") %>

@@ -1,0 +1,71 @@
+<%- include("snippets/header",{
+    pageName: "profile"
+}) %>
+
+<section class="container profile-main">
+    <div class="profile-head">
+        <div class="profile-img-box">
+            <img class="profile-img" src="../img/profile-pic.jfif" alt="">
+        </div>
+        <div class="profile-details">
+            <h3 class="profile-name">natasha</h3>
+            <h6 class="status">Online</h6>
+        </div>
+        <div class="edit-profile pull-right">
+            <a href="#">Edit Profile on EA</a>
+        </div>
+    </div>
+</section>
+<section class="container user-achivements">
+    <div class="row">
+        <div class="achivements-box col-md-8">
+            <h2 class="section-head">Achievements</h2>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="achivements-unlocked row">
+                        <div class="col-md-1"></div>
+                        <img class="col-md-2" src="../img/cup.png" alt="">
+                        <div class="achivement-data col-md">
+                            <h3>392</h3>
+                            <p>Achivements Unlocked</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="origin-points row">
+                        <div class="col-md-1"></div>
+                        <img class="col-md-2" src="../img/back.png" alt="">
+                        <div class="achivement-data col-md">
+                            <h3>3190</h3>
+                            <p>Origin Points Earned</p>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="latest-achivements">
+                        <h2 class="section-head">Latest Achivements</h3>
+                        <div class="badges">
+                            <%for(let i=0; i<6; i++){%>
+                                <img src="../img/badge.png" alt="">
+                            <%}%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="friends-section">
+                <h2 class="section-head">Friends 
+                    <span class="friends-no">(2/10)</span>
+                </h2>
+                <div class="friends-container">
+                    <% for(let i=0; i<3; i++){%>
+                        <%- include("snippets/friends") %>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include("snippets/footer") %>

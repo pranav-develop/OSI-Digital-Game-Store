@@ -1,0 +1,249 @@
+<%- include("snippets/header", 
+    {
+        pageName: "index"
+    }
+) -%>
+<section class="container">
+    <header class="gamepage_Header" style="background: url('../<%=gameDetails.backImg%>'); background-size:cover; background-repeat: no-repeat; height: 600px;">
+        <div class="header-icons">
+            <ul class="header-icons-left float-left">
+                <li class="float-left"><a href="#">Browse</a></li>
+                <li class="float-left">
+                    <a href="#">Geners
+                        <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="float-left">
+                    <a href="#">Titles
+                        <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="float-left">
+                    <a href="#">Deals
+                        <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="float-left"><a href="#">Origin Vault</a></li>
+            </ul>
+            <ul class="header-icons-right float-right">
+                <li class="float-left">
+                    <a href="#">
+                        <svg class="bi bi-plus-square-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="float-left"><a href="#">Titles</a></li>
+                <li class="float-left"><a href="#">Titles</a></li>
+                <li class="float-left"><a href="#">Titles</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="mainBox_outer">
+        <div class="desc row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <a href="#">
+                    <div class="image-holder">
+                        <img class="game-poster-potrait" src="../<%=gameDetails.imagePath%>" alt="starwars">
+                    </div>
+                </a>
+                <button class="btn btn-primary buy_button">Buy Now</button>
+                <button class="btn btn-primary add_cart_button">Add to Cart</button>
+            </div>
+            <div class="col-md-6">
+                <h2 class="game_head"><%=gameDetails.gameName%></h2>
+                <div class="game_tags">
+                    <span>Action</span>
+                    <span>RPG</span>
+                    <span>Star Wars</span>
+                </div>
+                <p class="game_desc">
+                    <%=gameDetails.gameDesc%>
+                </p>
+                <div class="game_info">
+                    <div class="game_info_box box1">
+                        <h6 class="info_head">Developer</h6>
+                        <h5 class="info_data"><%=gameDetails.gameInfo.developer%></h5>
+                    </div>
+                    <div class="game_info_box box2">
+                        <h6 class="info_head">Publisher</h6>
+                        <h5 class="info_data"><%=gameDetails.gameInfo.publisher%></h5>
+                    </div>
+                    <div class="game_info_box box1">
+                        <h6 class="info_head">Release Date</h6>
+                        <h5 class="info_data"><%=gameDetails.gameInfo.releaseDate%></h5>
+                    </div>
+                    <div class="game_info_box box2">
+                        <h6 class="info_head">Rating</h6>
+                        <h5 class="info_data"><%=gameDetails.gameInfo.rating%></h5>
+                    </div>
+                    <div class="game_info_box box1">
+                        <h6 class="info_head">Platform</h6>
+                        <h5 class="info_data">
+                            <%for(let i=0; i<gameDetails.gameInfo.platforms.length; i++){%>
+                                <img src="../<%= gameDetails.gameInfo.platforms[i] %>" alt="widnows_icon">
+                            <% } %>
+                        </h5>
+                    </div>
+                    <div class="game_info_box box2">
+                        <h6 class="info_head">Language</h6>
+                        <h5 class="info_data">
+                            <%for(let i=0; i<gameDetails.gameInfo.languages.length; i++){%>
+                                <%= gameDetails.gameInfo.languages[1] %>,
+                            <% } %>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
+<section class="container game_editions">
+    <div class="game_edition_container">
+        <h3 class="games_page_section_head">Editions</h3>
+        <%for(let i=0; i<gameDetails.gameEditions.length; i++){%>
+            <div class="editions row">
+                <div class="col-md-2">
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-cart" fill="#41b565" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="package_name"><%= gameDetails.gameEditions[i].benefitsName%></h4>
+                    <p class="info_head"><%= gameDetails.gameEditions[i].benefits%></p>
+                </div>
+                <div class="col-md-2 price">
+                    <h4>$<%= gameDetails.gameEditions[i].price%></h4>
+                    <a href="#" class="buy_button">Add to Cart</a>
+                </div>
+            </div>
+        <%}%>
+        <div class="editions row origin_primium">
+            <div class="col-md-2">
+                <img src="../img/back.png" alt="">
+            </div>
+            <div class="col-md-8">
+                <h4 class="package_name">Join Premier</h4>
+                <p class="info_head">is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Conte</p>
+                <p class="additional_info">tablished fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distri</p>
+            </div>
+            <div class="col-md-2 price">
+                <h4>$14.99<br><span style="font-size: 1.1rem; margin-top: 8px;">month</span><br><br><span style="font-size: 0.8rem; margin-top: 15px; margin-bottom: 15px;">or</span><br><br> $99.99 <br><span style="font-size: 1.1rem; margin-top: 8px;">year</span></h4>
+                <a href="#" class="buy_button">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container latest_news">
+    <div class="latest_news_container">
+        <h3 class="games_page_section_head">Editions</h3>
+        <div class="news-container">
+                <div class="news-box news-box-1">
+                    <div class="news-img">
+                        <!--img src="img/Game poster/deablo.jpeg" alt=""-->
+                    </div>
+                    <div class="news-head float-left">
+                        <h3 class="news-heading">Diablo Reaper Of Souls</h3>
+                        <p class="news-sub">
+                            November 1, 2019 <br>
+                            1 min Read
+                        </p>
+                        <p class="patch"><span>Patch Notes</span></p>
+                    </div>
+                    <div class="news-desc">
+                        <h3 class="head">Quality of Life Update</h3>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using<br> Lorem Ipsum is that it has a more-or-less normal distribution of letters<br>, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and we<br>b page editors now use Lorem Ipsum as their default model text, a<br>nd a search for 'lorem ipsum' will u<br>ncover many web sites still in<br> their infancy. Various versions have evolveD.
+                        </p>
+                        <span>
+                            <a id="read-more-home1" onclick="showbox1();">
+                                Read More
+                                <svg class="bi bi-chevron-down" width="1.05em" height="1.05em" viewBox="0 0 16 16" fill="#fe7901" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                            <a id="read-less-home1" onclick="hidebox1();">
+                                Read Less
+                                <svg class="bi bi-chevron-up" width="1.05rem" height="1.05rem" viewBox="0 0 16 16" fill="#fe7901" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                                </svg>
+                            </a>
+                        </span>
+                    
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+<section class="container system_requirements">
+    <div class="system_requirements_container">
+        <h3 class="games_page_section_head">System Requirements</h3>
+        <div class="row">
+            <div class="system_info_box col-md-6 col-sm-12">
+                <div>
+                    <h3 class="system_info_box_head">Minimum</h3>
+                    <div>
+                        <p class="info_type">OS</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.minimum.os%></p>
+                        <p class="info_type">Memory</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.minimum.memory%></p>
+                        <p class="info_type">Processor</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.minimum.processor%></p>
+                        <p class="info_type">Video Card Memory</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.minimum.videoCardMemory%></p>
+                        <p class="info_type">Hard Disk Space</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.minimum.hardDiskSpace%></p>
+                        <p class="info_type">Video Card</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.minimum.videoCard%></p>
+                        <p class="info_type">Sound</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.minimum.sound%></p>
+                    </div>
+                </div>
+            </div>
+            <div class="system_info_box col-md-6 col-sm-12">
+                <div>
+                    <h3 class="system_info_box_head">Recommanded</h3>
+                    <div>
+                        <p class="info_type">OS</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.recommanded.os%></p>
+                        <p class="info_type">Memory</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.recommanded.memory%></p>
+                        <p class="info_type">Processor</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.recommanded.processor%></p>
+                        <p class="info_type">Video Card Memory</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.recommanded.videoCardMemory%></p>
+                        <p class="info_type">Hard Disk Space</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.recommanded.hardDiskSpace%></p>
+                        <p class="info_type">Video Card</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.recommanded.videoCard%></p>
+                        <p class="info_type">Sound</p>
+                        <p class="desc"><%= gameDetails.systemRequirements.recommanded.sound%></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container similar_games">
+    <div class="similar_games_container">
+        <h3 class="games_page_section_head">Similar Games</h3>
+        <div class="row">
+            <% for(let i=0 ;i<6; i++){ %>
+                <%- include("snippets/dealsGeneral", {
+                    gameName: "PUBG",
+                    price: 20,
+                    imagePath: "img/Game poster/pubg.jpg"
+                }) -%>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<%- include("snippets/footer") -%>
