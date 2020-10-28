@@ -7,7 +7,7 @@ function add_to_wishlist1(){
 		prev.style.display = "none";
 		after.style.display = "block";
 	}
-	else
+	else 
 	{
 		prev.style.display = "block";
 		after.style.display = "none";
@@ -204,4 +204,11 @@ function showMySettings(me){
 		document.querySelector(".diagnostics").classList.remove("d-none");
 		document.querySelector(".settings2").classList.remove("selected");
 	}	
+}
+/*--------------toogle friends section visibility-------*/
+function toggleFriendList(){
+	document.querySelector(".friends-list").classList.toggle("d-none");
+}
+function toggleNotification(){
+	document.querySelector(".notification").classList.toggle("d-none");
 }

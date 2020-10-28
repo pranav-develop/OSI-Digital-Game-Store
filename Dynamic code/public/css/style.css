@@ -5,7 +5,7 @@
 	--main-back-color: #1a2329;
 	--general-text-color: #DDDDDD;
 	--body-back: #191919;
-}
+} 
 html{
 	padding: 0;
 	margin: 0;
@@ -58,11 +58,12 @@ span{
 
 .section-head{
 	font-size: 1.5rem;
-	color: #EFEFEF;
+	color: #fff;
 	font-weight: 900;
 	padding: 40px;
 	margin-bottom: 0;
 	padding-bottom: 10px;
+	letter-spacing: 2px;
 }
 .section-subhead{
 	font-size: 1rem;
@@ -165,6 +166,48 @@ header .header-icons .header-icons-right li:nth-child(1)
 {
 	padding: 0;
 	font-size: 2rem;
+}
+.notification{
+	width: 300px;
+    height: auto;
+	max-height: 400px;
+	overflow-x: hidden;
+    overflow-y: auto;
+	background: #17181F;
+	border: 2px solid #fe7901;
+    top: 100%;
+    margin-top: 10px;
+    right: 15%;
+    z-index: 5;
+	position: absolute;
+	border-radius: 15px;
+	padding-top: 10px;
+}
+.notification .row{
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 15px 20px;
+	border-bottom: 1px solid #5E5E5E;
+	box-sizing: border-box;
+
+}
+.notification h3{
+	font-size: 1.2rem;
+	color: #fe7901;
+}
+.notification p{
+	margin-bottom: 0px;
+	font-size: 0.9rem;
+	color: #fff;
+}
+.notification h6{
+	color: #fe7901;
+	font-size: 0.7rem;
+	right: 0;
+	margin-bottom: 0;
+	width: 100%;
+	text-align: right;
+	padding-top: 5px;
 }
 /*--------------------Slider----------------*/
 .slide_section{
@@ -371,7 +414,7 @@ header .header-icons .header-icons-right li:nth-child(1)
 
 .origin-access div{
 	padding-top: 70px;
-	padding-bottoom: 70px;
+	padding-bottom: 70px;
 }
 
 /*----------------------load more------------------------*/
@@ -390,6 +433,7 @@ div.load-more{
 /*-------------------copyright-------------------*/
 footer{
 	text-align: center;
+	bottom: 0;
 	width: 100%;
 }
 footer .copyright{
@@ -511,14 +555,28 @@ footer .copyright{
 	cursor: pointer;
 }
 /*-------------------Friends Section-----------------------*/
-.main-page-content .additional-home .friends-section{
+.friends-list{
+	width: 300px;
+	height: auto;
+	max-height: 400px;
+	overflow-y: auto;
+	background: #17181F;
+	top: 100%;
+	border: 2px solid #fe7901;
+	border-radius: 15px;
+	margin-top: 10px;
+	right: 15%;
+	z-index: 5;
+	position: absolute;
+}
+.friends-section{
 	padding-right: 20px;
 }
-.main-page-content .additional-home .friends-no{
+.additional-home .friends-no{
 	font-size: 1.2rem;
 	color: #5E5E5E;
 }
-.friends-container .friends{
+.friends{
 	border-radius: 15px;
 	position: relative;
 	background-color: #17181F;
@@ -527,31 +585,31 @@ footer .copyright{
 	width: 100%;
 	height: 80px;
 }
-.friends-container .friends .friend-img{
+.friends .friend-img{
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
 }
-.friends-container .friends .friend-details{
+.friends .friend-details{
 	padding: 0 5%;
 }
-.friends-container .friends .friend-details .user-name{
+.friends .friend-details .user-name{
 	font-size: 1.25rem;
     font-weight: 500;
 }
-.friends-container .friends .friend-details .status{
+.friends .friend-details .status{
 	font-size: 0.9rem;
 }
-.friends-container .friends .friend-details .playing{
+.friends .friend-details .playing{
 	color: #fe7901;
 }
-.friends-container .friends .friend-details .online{
+.friends .friend-details .online{
 	color: #0B6310;
 }
-.friends-container .friends .friend-details .offline{
+.friends .friend-details .offline{
 	color: #454545;
 }
-.friends-container .friends .more-options{
+.friends .more-options{
 	padding: 10px;
 	background: var(--main-back-color);
 	border-radius: 5px;
@@ -1355,8 +1413,157 @@ footer .copyright{
 	font-size: 1rem;
 	color: #fe7901;
 }
-
-
-
+/*----------------------admin login-----------------------------*/
+.admin-login .container{
+	background: transparent;
+}
+.admin-login .login-box{
+	width: 34%;
+	position: relative;
+	background: var(--main-back-color);
+    margin-left: 33%;
+	margin-top: 15%;
+	padding: 40px 40px;
+	padding-bottom: 60px;
+	border-radius: 15px;
+	
+}
+.admin-login .login-box .login-head{
+	width: 100%;
+	text-align: center;
+}
+.admin-login .login-box h3{
+	font-size: 1.7rem;
+	color: #EFEFEF;
+	padding-top: 15px;
+}
+.admin-login .login-box .login-head img{
+	width: 45px;
+	height: 45px;
+}
+.admin-login .login-box form{
+	margin-top: 20px;
+}
+.login-box input{
+	width: 90%;
+	margin-left: 5%;
+	background: #1b242a;
+	border: none;
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
+	border-bottom: 1px solid #f15a24;
+}
+.login-box button{
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px;
+	margin-top: 40px;
+	background: #f15a24;
+	border: none;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.3rem;
+	text-align: center;
+}
+.login-box button:hover{
+	background: #d05023;
+}
+.stick-bottom{
+	position: absolute;
+	bottom: 0;
+}
+/*-------------------------admin-page----------------*/
+.admin-page .admin-nav .container{
+	background-color: #17171b;
+	position: relative;
+}
+.admin-page .container > .row{
+	margin: 0;	
+}
+.admin-page .container > .row > .row{
+	right: 20px;
+	position: absolute;
+	cursor: pointer;
+}
+.admin-page .logo-img{
+	height: 50px;
+	width: 50px;
+	padding: 10px;
+	margin: 10px 20px;
+}
+.admin-page .admin-img{
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	padding: 10px;
+}
+.admin-page .admin-img img{
+	border-radius: 50%;
+}
+.admin-page .admin-info h3{
+	font-size: 1.3rem;
+	margin-top: 25px;
+	color: #fff;
+	font-weight: 500;
+}
+.admin-page .admin-info h3 span{
+	font-weight: 800;
+	color: #f15a24;
+	letter-spacing: 2px;
+}
+.control-panel{
+	min-height: 90%;
+}
+.control-panel .container{
+	height: 86vh;
+    max-height: 86vh;	
+}
+.control-panel .row .col-md-2{
+	padding: 15px;
+	padding-right: 0px;
+}
+.control-panel .row .col-md-2 > div{
+	background-color: #17181F;
+	margin-left: 15px;
+	padding: 20px;
+	border-radius: 15px;
+	padding-top: 0px
+}
+.control-panel .control-options{
+	width: 100%;
+	padding: 15px 0 7px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	color: #a9a9a9;
+	border-bottom: 1px solid #a9a9a9;
+}
+.control-panel .active{
+	color: #fff;
+}
+.control-panel .row .col-md-10 > div{
+	background-color: #17181F;
+    height: 81.5vh;
+    margin-top: 20px;
+	max-height: 81.5vh;
+	margin-right: 15px;	
+	border-radius: 15px;
+	overflow: auto;
+}
+.control-panel .col-md-10 h3{
+	margin: 20px 50px;
+	font-size: 1.4rem;
+	color: #fff;
+	letter-spacing: 1px;
+}
+.control-panel .dashboard h4{
+	margin: 20px 50px;
+	font-size: 1.1rem;
+	color: #a9a9a9;
+	letter-spacing: 1px;
+}
 
 

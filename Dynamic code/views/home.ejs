@@ -158,44 +158,9 @@
             
             <div class="latest-releases-home">
                 <h2 class="section-head">Latest Releases</h2>
-                <div class="games-box col-md-12">
-                    <a href="#">
-                        <div class="image-holder">
-                            <img class="gameposter-landscape" src="img/Game poster/uncharted2.jpg" alt="uncharted 2">
-                        </div>
-                        <div class="game-name">
-                            <span class="main">November 15, 2019</span><br>
-                        </div>
-                    </a>
-                </div>
-                <div class="games-box col-md-12">
-                    <a href="#">
-                        <div class="image-holder">
-                            <img class="gameposter-landscape" src="img/Game poster/uncharted2.jpg" alt="uncharted 2">
-                            <div class="additional">
-                                <p class="percent-discount float-right">-40%</p>
-                                <p class="discout-price float-right">$20</p>
-                            </div>
-                        </div>
-                        <div class="game-name">
-                            <span class="main">November 15, 2019</span><br>
-                        </div>
-                    </a>
-                </div>
-                <div class="games-box col-md-12">
-                    <a href="#">
-                        <div class="image-holder">
-                            <img class="gameposter-landscape" src="img/Game poster/uncharted2.jpg" alt="uncharted 2">
-                            <div class="additional">
-                                <p class="percent-discount float-right">-40%</p>
-                                <p class="discout-price float-right">$20</p>
-                            </div>
-                        </div>
-                        <div class="game-name">
-                            <span class="main">November 15, 2019</span><br>
-                        </div>
-                    </a>
-                </div>	
+                <% for(let i=0; i<3; i++){ %>
+                    <%- include("snippets/latestrelease") %>
+                <% } %>	
                 <span class="more-items float-right">More in Store
                     <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Game Store</title>
@@ -13,31 +13,53 @@
 	
 	<nav class="navbar navbar-expand-lg navbar-dark"> 
 		<div class="container">
-		<a class="navbar-brand" href="/"><img class="logo" src="../img/back.png" alt=""></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item <% if(pageName == "home"){%>active <%}%>">
-					<a class="nav-link" href="/home">Home</a>
-				</li>
-				<li class="nav-item <% if(pageName == "index"){%>active <%}%>">
-					<a class="nav-link" href="/">Store</a>
-				</li>
-				<li class="nav-item <% if(pageName == "mygames"){%>active <%}%>">
-					<a class="nav-link" href="/mygames">My Game</a>
-				</li>
-				<li class="nav-item <% if(pageName == "originaccess"){%>active <%}%>">
-					<a class="nav-link" href="/originaccess">Origin Access</a>
-				</li>
-			</ul>
-			<div class="additional-nav">
-				<a href="#"><img class="more-icons" src="../img/icons/notifications.png" alt="notifications"></a>
-				<a href="#"><img class="more-icons" src="../img/icons/friends.png" alt="friends"></a>
-				<a href="/profile"><img class="profile" src="../img/profile-pic.jfif" alt="user"></a>
-				<a href="/settings"><img class="settings more-icons" src="../img/icons/settings.png" alt="settings"></a>
+			<a class="navbar-brand" href="/"><img class="logo" src="../img/back.png" alt=""></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item <% if(pageName == "home"){%>active <%}%>">
+						<a class="nav-link" href="/home">Home</a>
+					</li>
+					<li class="nav-item <% if(pageName == "index"){%>active <%}%>">
+						<a class="nav-link" href="/">Store</a>
+					</li>
+					<li class="nav-item <% if(pageName == "mygames"){%>active <%}%>">
+						<a class="nav-link" href="/mygames">My Game</a>
+					</li>
+					<li class="nav-item <% if(pageName == "originaccess"){%>active <%}%>">
+						<a class="nav-link" href="/originaccess">Origin Access</a>
+					</li>
+				</ul>
+				<div class="additional-nav">
+					<a href="#" onclick="toggleNotification()"><img class="more-icons" src="../img/icons/notifications.png" alt="notifications"></a>
+					<a href="#" onclick="toggleFriendList()"><img class="more-icons" src="../img/icons/friends.png" alt="friends"></a>
+					<a href="/profile"><img class="profile" src="../img/profile-pic.jfif" alt="user"></a>
+					<a href="/settings"><img class="settings more-icons" src="../img/icons/settings.png" alt="settings"></a>
+				</div>
+				<div class="friends-list d-none">
+					<% for(let i=0; i<3; i++){ %>
+						<%- include("friends") %>
+					<% } %>
+				</div>
+				<div class="notification d-none">
+					<div class="row">
+						<h3>Downloading... Diablo</h3>
+						<p>Your Game is now downloading</p>
+						<h6>1:30 PM</h6>
+					</div>
+					<div class="row">
+						<h3>Downloading... Diablo</h3>
+						<p>Your Game is now downloading</p>
+						<h6>1:30 PM</h6>
+					</div>
+					<div class="row">
+						<h3>Downloading... Diablo</h3>
+						<p>Your Game is now downloading</p>
+						<h6>1:30 PM</h6>
+					</div>
+				</div>
 			</div>
-		</div>
 		</div>
 	</nav>

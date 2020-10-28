@@ -5,6 +5,7 @@ const mongoose  = require("mongoose");
 const { static } = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const dataBase = require(__dirname + "/data.js");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", 'ejs');
 app.use(static("public/"));
@@ -15,6 +16,7 @@ app.get("/", function(request, response){
     };
     response.render("index", parameters);
 });
+
 
 app.get("/games/:gameName", function(request, response){
     const parameters = {
@@ -65,18 +67,32 @@ app.get("/games/:gameName", function(request, response){
             }
         }
     }
-    response.render("gamepage", parameters)
+    response.render("gamepage", parameters);
 });
 
 app.get("/profile", function(request, response){
+    const params = {
+        name: "natasha",
+        status: "Online",
+        achivementsCount: 392,
+        originpoints: 3190, 
+    }
     response.render("profile");
 });
 
 app.get("/settings", function(request, response){
     const params = {
 
-    }
-    response.render("settings", params)
+    };
+    response.render("settings", params);
+});
+
+app.get("/admin", function(request, response){
+    response.render("admin");
+});
+
+app.get("/admin-portal", function(request, response){
+    response.render("admin-page");
 });
 
 app.get("/:pageName", function(request, response){
