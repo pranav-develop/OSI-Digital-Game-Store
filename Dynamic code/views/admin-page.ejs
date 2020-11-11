@@ -32,23 +32,114 @@
             <div class="row">
                 <div class="col-md-2">
                     <div>
-                        <div class="control-options active">DashBoard</div>
-                        <div class="control-options">Show Users</div>
-                        <div class="control-options">Add Users</div>
-                        <div class="control-options">Games List</div>
-                        <div class="control-options">Add Games</div>
+                        <div class="control-options active" onclick="showAdminPages('dashboard')">DashBoard</div>
+                        <div class="control-options" onclick="showAdminPages('showUsers')">Show Users</div>
+                        <div class="control-options" onclick="showAdminPages('gameList')">Games List</div>
+                        <div class="control-options" onclick="showAdminPages('addGames')">Add Games</div>
                     </div>
                 </div>
                 <div class="col-md-10">
-                    <div class="dashboard d-none">
+                    <div class="dashboard">
                         <h3>Welcome Admin</h3>
                         <h4>Nothing To Show Here</h4>
                     </div>
-                    <div class="show-users d-block">
+                    <div class="show-users d-none">
                         <h3>List of All the Users</h3>
                         <div class="content-block">
-                            <div class="content-list users">
-                                
+                            <div class="content-list-box">
+                                <% for(let i=0; i<6 ; i++){ %>
+                                    <div class="row users">
+                                        <div class="list-item">
+                                            <img src="img/profile-pic.jfif" alt="">
+                                        </div>
+                                        <div class="user-name">
+                                            fjofjioewjfao
+                                        </div>
+                                        <div class="remove-user">+</div>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-games d-none">
+                        <h3>Add a new Game</h3>
+                        <div class="content-block">
+                            <div class="content-list-box">
+                                <form action="/admin-input" method="POST" enctype="multipart/form-data" autocomplete="off">
+                                    <div>
+                                        <h4>General Info</h4>
+                                        <input class="medium-box" type="text" name="gameName" placeholder="Game Name" required>
+                                        <input class="medium-box" type="text" name="gameGenre" placeholder="Game Genre" required>
+                                        <input class="medium-box" type="text" name="gameDesc" placeholder="Game Description" required>
+                                        <input class="medium-box" type="text" name="developer" placeholder="Developer's Name" required>
+                                        <input class="medium-box" type="text" name="publisher" placeholder="Publisher Name" required>
+                                        <input class="medium-box" type="text" name="releaseDate" placeholder="Release Date" required>
+                                        <input class="medium-box" type="text" name="rating" placeholder="Rating" required>
+                                        <input class="medium-box" type="text" name="platforms" placeholder="Platforms" required>
+                                        <input class="medium-box" type="text" name="languages" placeholder="Languages" required><br><br>
+                                        <label for="gamePoster" style="color: #f15a24; font-size: 1.2rem;">Game Poster (Potrait):  </label>
+                                        <input type="file" name="gamePoster" placeholder="Game Poster" required><br><br>
+                                        <label for="gamePosterB" style="color: #f15a24; font-size: 1.2rem">Game Back Img (Landscape):  </label>
+                                        <input type="file" name="gamePosterB" placeholder="Game Poster" required>
+                                    </div>
+                                    <div>
+                                        <h4>Game Editions</h4>
+                                        <div>
+                                            <h5>First Edition</h5>
+                                            <input class="medium-box" type="text" name="gameBenigitsName1" placeholder="Head" required>
+                                            <input class="medium-box" type="text" name="gameBenifitsPrice1" placeholder="Price" required><br>
+                                            <textarea class="bigbox" type="text" name="gameBenifitsBenefit1" rows="5" cols="100%" placeholder="Desc" required></textarea>
+                                        </div>
+                                        <div>
+                                            <h5>Second Edition</h5>
+                                            <input class="medium-box" type="text" name="gameBenigitsName2" placeholder="Head" required>
+                                            <input class="medium-box" type="text" name="gameBenifitsPrice2" placeholder="Price" required><br>
+                                            <textarea class="bigbox" type="text" name="gameBenifitsBenefit2" rows="5" cols="100%" placeholder="Desc" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4>System Requiremets</h4>
+                                        <div>
+                                            <h5>Minimum</h5>
+                                            <input class="medium-box" type="text" name="minos" placeholder="Operating System" required>
+                                            <input class="medium-box" type="text" name="minMemory" placeholder="Memory" required>
+                                            <input class="medium-box" type="text" name="minProcessor" placeholder="Processor" required>
+                                            <input class="medium-box" type="text" name="minVideoMem" placeholder="Video Memory" required>
+                                            <input class="medium-box" type="text" name="minVideoCard" placeholder="Video Card Name" required>
+                                            <input class="medium-box" type="text" name="minSpace" placeholder="Space" required>
+                                            <input class="medium-box" type="text" name="minSound" placeholder="Sound" required>
+                                        </div>
+                                        <div>
+                                            <h5>Recommanded</h5>
+                                            <input class="medium-box" type="text" name="os" placeholder="Operating System" required>
+                                            <input class="medium-box" type="text" name="memory" placeholder="Memory" required>
+                                            <input class="medium-box" type="text" name="processor" placeholder="Processor" required>
+                                            <input class="medium-box" type="text" name="videoCardMemory" placeholder="Video Memory" required>
+                                            <input class="medium-box" type="text" name="videoCard" placeholder="Video Card Name" required>
+                                            <input class="medium-box" type="text" name="space" placeholder="Space" required>
+                                            <input class="medium-box" type="text" name="sound" placeholder="Sound" required>
+                                        </div>
+                                    </div>
+                                    <button class="submit-data" type="submit">Add</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-list d-none">
+                        <h3>List of Available Games</h3>
+                        <div class="content-block">
+                            <div class="content-list-box">
+                                <% for(let i=0; i<6 ; i++){ %>
+                                    <div class="row users">
+                                        <div class="list-item">
+                                            <img src="img/profile-pic.jfif" alt="">
+                                        </div>
+                                        <div class="user-name">
+                                            fjofjioewjfao
+                                        </div>
+                                        <div class="remove-user">+</div>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>

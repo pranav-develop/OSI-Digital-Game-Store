@@ -212,3 +212,47 @@ function toggleFriendList(){
 function toggleNotification(){
 	document.querySelector(".notification").classList.toggle("d-none");
 }
+/*----------------------admin-page-----------------------------*/
+function showAdminPages(name){
+	let dashboard = document.querySelector(".dashboard");
+	let showUsers = document.querySelector(".show-users");
+	let addGame = document.querySelector(".add-games");
+	let gameList = document.querySelector(".game-list");
+	if(name == "dashboard"){
+		dashboard.classList.remove("d-none");
+		showUsers.classList.add("d-none");
+		addGame.classList.add("d-none");
+		gameList.classList.add("d-none");
+		document.querySelector(".control-panel div.control-options:nth-child(1)").classList.add("active");
+		document.querySelector(".control-panel div.control-options:nth-child(2)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(3)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(4)").classList.remove("active");
+	} else if(name == "showUsers"){
+		dashboard.classList.add("d-none");
+		showUsers.classList.remove("d-none");
+		addGame.classList.add("d-none");
+		gameList.classList.add("d-none");
+		document.querySelector(".control-panel div.control-options:nth-child(1)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(2)").classList.add("active");
+		document.querySelector(".control-panel div.control-options:nth-child(3)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(4)").classList.remove("active");
+	} else if(name == "addGames"){
+		dashboard.classList.add("d-none");
+		showUsers.classList.add("d-none");
+		addGame.classList.remove("d-none");
+		gameList.classList.add("d-none");
+		document.querySelector(".control-panel div.control-options:nth-child(1)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(2)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(3)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(4)").classList.add("active");
+	} else if(name == "gameList"){
+		dashboard.classList.add("d-none");
+		showUsers.classList.add("d-none");
+		addGame.classList.add("d-none");
+		gameList.classList.remove("d-none");
+		document.querySelector(".control-panel div.control-options:nth-child(1)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(2)").classList.remove("active");
+		document.querySelector(".control-panel div.control-options:nth-child(3)").classList.add("active");
+		document.querySelector(".control-panel div.control-options:nth-child(4)").classList.remove("active");
+	} 
+}

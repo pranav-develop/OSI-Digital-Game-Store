@@ -14,63 +14,67 @@ const gameListSchema = new mongoose.Schema({
 });
 const Game = mongoose.model("game", gameListSchema);
 
-module.exports.addGame = function(details){
+exports.addGame = function(details){
     const game = new Game({
-        gameName: details.gameName,
-        gameGenre: details.gameGenre,
-        imagePath: details.imagePath,
-        backImg: details.backImg,
+        gameName: details.body.gameName,
+        gameGenre: details.body.gameGenre,
+        imagePath: "img/gamePoster/"+ details.files.gamePoster.name,
+        backImg: "img/gamePosterB/"+ details.files.gamePosterB.name,
         gameDesc: details.gameDesc,
         gameInfo: {
-            developer: details.developer,
-            publisher: details.publisher,
-            releaseDate: details.releaseDate,
-            rating: details.rating,
-            platforms: details.platforms,
-            languages: details.languages
+            developer: details.body.developer,
+            publisher: details.body.publisher,
+            releaseDate: details.body.releaseDate,
+            rating: details.body.rating,
+            platforms: details.body.platforms,
+            languages: details.body.languages
         },
         gameEditions: [ 
             {
-                benefitsName: details.gameBenifitsName1,
-                benefits: details.gameBenifitsBenefit1,
-                price: details.gameBenifitsPrice1,
+                benefitsName: details.body.gameBenifitsName1,
+                benefits: details.body.gameBenifitsBenefit1,
+                price: details.body.gameBenifitsPrice1,
             },
             {
-                benefitsName: details.gameBenifitsName2,
-                benefits: details.gameBenifitsBenefit2,
-                price: details.gameBenifitsPrice2,
+                benefitsName: details.body.gameBenifitsName2,
+                benefits: details.body.gameBenifitsBenefit2,
+                price: details.body.gameBenifitsPrice2,
             }
         ],
         systemRequirements: {
             minimum: {
-                os: details.minos,
-                memory: details.minMemory,
-                processor: details.minProcessor,
-                videoCardMemory: details.minVideoMem,
-                hardDiskSpace: details.minSpace,
-                videoCard: details.minVideoCard,
-                sound: details.minSound
+                os: details.body.minos,
+                memory: details.body.minMemory,
+                processor: details.body.minProcessor,
+                videoCardMemory: details.body.minVideoMem,
+                hardDiskSpace: details.body.minSpace,
+                videoCard: details.body.minVideoCard,
+                sound: details.body.minSound
             },
             recommanded: {
-                os: details.os,
-                memory: details.memory,
-                processor: details.processor,
-                videoCardMemory: details.videoCardMemory,
-                hardDiskSpace: details.space,
-                videoCard: details.videoCard,
-                sound: details.sound
+                os: details.body.os,
+                memory: details.body.memory,
+                processor: details.body.processor,
+                videoCardMemory: details.body.videoCardMemory,
+                hardDiskSpace: details.body.space,
+                videoCard: details.body.videoCard,
+                sound: details.body.sound
             }
         }
     });
     game.save();
 };
 
-module.exports.getGamesWithGenure = function(genure) {
-    Game.find({gameGenre: genure}, function(error, gameList){
-        console.log(gameList);
-        return gameList;
+exports.getGame = function(name){
+    Game.findOne({gameName: "test"}, function(error, game){
+        if(error){
+            console.log(error);
+        } else{
+            return game;
+        }
     });
 };
+
 let data  = {
     gameName: "Star Wars JEDI : Fallen Order",
     imagePath: "img/Game poster/starwars_jedai.jpg",
@@ -104,4 +108,51 @@ let data  = {
     sound: "DirectX Compactible",
 };
 
-
+// const parameters = {
+//         gameDetails: {
+//             gameName: "Star Wars JEDI : Fallen Order",
+//             imagePath: "img/Game poster/starwars_jedai.jpg",
+//             backImg: "img/gameBack1(1).jpg",
+//             gameDesc: "Star Wars Jedi: Fallen Order is an action-adventure game developed by Respawn Entertainment and published by Electronic Arts. It was released for Windows, PlayStation 4, and Xbox One on November 15, 2019.",
+//             gameInfo: {
+//                 developer: "Respawn Entertainment",
+//                 publisher: "EA Games",
+//                 releaseDate: "December 3rd, 2019",
+//                 rating: "Mature 17+",
+//                 platforms: ["img/windows_icon.png"],
+//                 languages: ["English", "French", "Spanish"]
+//             },
+//             gameEditions: [ 
+//                 {
+//                     benefitsName: "Buy Star Wars JEDI : Fallen Order",
+//                     benefits: "Full Game",
+//                     price: "59"
+//                 },
+//                 {
+//                     benefitsName: "Buy Deluxe Star Wars JEDI : Fallen Order",
+//                     benefits: "Full Game Chrims skin - 1Pari fashfahfhakjhfjkakf iujhkjash",
+//                     price: "59"
+//                 }
+//             ],
+//             systemRequirements: {
+//                 minimum: {
+//                     os: "Window Vista Service Pack 2 32-bit",
+//                     memory: "4GB",
+//                     processor: "Intel Core 2 DUO 2.4 GHz / AMD Athlon X2 2.7GHz",
+//                     videoCardMemory: "512 MB",
+//                     hardDiskSpace: "20 GB Free Space",
+//                     videoCard: "ATI Radeon HD 3870 / NVDIA 8800 GT / Intel HD 3000 Integrated Graphics",
+//                     sound: "DirectX Compactible"
+//                 },
+//                 recommanded: {
+//                     os: "64-bit Winodows 7 / 8.1 / 10",
+//                     memory: "8 GB",
+//                     processor: "Ryzen 7 1700 or Equivalent / i7-6700k or Equivalent",
+//                     videoCardMemory: "2 GB",
+//                     hardDiskSpace: "20 GB Free Space",
+//                     videoCard: "GTX 1070/1660Ti or Equivalent / RX Vega 56 or Equivalent",
+//                     sound: "DirectX Compactible"
+//                 }
+//             }
+//         }
+//     }

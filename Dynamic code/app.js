@@ -2,13 +2,15 @@
 const express = require("express");
 const ejs = require("ejs");
 const mongoose  = require("mongoose");
+const upload = require("express-fileupload");
 const { static } = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const dataBase = require(__dirname + "/data.js");
+// const dataBase = require(__dirname + "/data.js");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", 'ejs');
 app.use(static("public/"));
+app.use(upload());
 
 app.get("/", function(request, response){
     const parameters = {
@@ -17,57 +19,96 @@ app.get("/", function(request, response){
     response.render("index", parameters);
 });
 
+mongoose.connect("mongodb://localhost:27017/digitalStoreDB", { useUnifiedTopology: true, useNewUrlParser: true });
+const gameListSchema = new mongoose.Schema({
+    gameName: String,
+    gameTags: Array,
+    imagePath: String,
+    backImg: String,
+    gameDesc: String,
+    gameInfo: Object,
+    gameEditions: Array,
+    systemRequirements: Object
+});
+const Game = mongoose.model("game", gameListSchema);
 
-app.get("/games/:gameName", function(request, response){
-    const parameters = {
-        gameDetails: {
-            gameName: "Star Wars JEDI : Fallen Order",
-            imagePath: "img/Game poster/starwars_jedai.jpg",
-            backImg: "img/gameBack1(1).jpg",
-            gameDesc: "Star Wars Jedi: Fallen Order is an action-adventure game developed by Respawn Entertainment and published by Electronic Arts. It was released for Windows, PlayStation 4, and Xbox One on November 15, 2019.",
-            gameInfo: {
-                developer: "Respawn Entertainment",
-                publisher: "EA Games",
-                releaseDate: "December 3rd, 2019",
-                rating: "Mature 17+",
-                platforms: ["img/windows_icon.png"],
-                languages: ["English", "French", "Spanish"]
+app.post("/admin-input", function (request, response){
+    if(request.files){
+        let poster = request.files.gamePoster;
+        poster.mv("./public/img/gamePoster/" + poster.name , function (err){
+            if(err){
+                response.send(err);
+            }
+        });
+        let bPoster = request.files.gamePosterB;
+        bPoster.mv("./public/img/gamePosterB/" + bPoster.name, function (err) { 
+            if(err){
+                response.send(err);
+            }
+        });
+    } 
+    const game = new Game({
+        gameName: request.body.gameName,
+        gameGenre: request.body.gameGenre,
+        imagePath: "img/gamePoster/"+ request.files.gamePoster.name,
+        backImg: "img/gamePosterB/"+ request.files.gamePosterB.name,
+        gameDesc: request.gameDesc,
+        gameInfo: {
+            developer: request.body.developer,
+            publisher: request.body.publisher,
+            releaseDate: request.body.releaseDate,
+            rating: request.body.rating,
+            platforms: request.body.platforms,
+            languages: request.body.languages
+        },
+        gameEditions: [ 
+            {
+                benefitsName: request.body.gameBenifitsName1,
+                benefits: request.body.gameBenifitsBenefit1,
+                price: request.body.gameBenifitsPrice1,
             },
-            gameEditions: [ 
-                {
-                    benefitsName: "Buy Star Wars JEDI : Fallen Order",
-                    benefits: "Full Game",
-                    price: "59"
-                },
-                {
-                    benefitsName: "Buy Deluxe Star Wars JEDI : Fallen Order",
-                    benefits: "Full Game Chrims skin - 1Pari fashfahfhakjhfjkakf iujhkjash",
-                    price: "59"
-                }
-            ],
-            systemRequirements: {
-                minimum: {
-                    os: "Window Vista Service Pack 2 32-bit",
-                    memory: "4GB",
-                    processor: "Intel Core 2 DUO 2.4 GHz / AMD Athlon X2 2.7GHz",
-                    videoCardMemory: "512 MB",
-                    hardDiskSpace: "20 GB Free Space",
-                    videoCard: "ATI Radeon HD 3870 / NVDIA 8800 GT / Intel HD 3000 Integrated Graphics",
-                    sound: "DirectX Compactible"
-                },
-                recommanded: {
-                    os: "64-bit Winodows 7 / 8.1 / 10",
-                    memory: "8 GB",
-                    processor: "Ryzen 7 1700 or Equivalent / i7-6700k or Equivalent",
-                    videoCardMemory: "2 GB",
-                    hardDiskSpace: "20 GB Free Space",
-                    videoCard: "GTX 1070/1660Ti or Equivalent / RX Vega 56 or Equivalent",
-                    sound: "DirectX Compactible"
-                }
+            {
+                benefitsName: request.body.gameBenifitsName2,
+                benefits: request.body.gameBenifitsBenefit2,
+                price: request.body.gameBenifitsPrice2,
+            }
+        ],
+        systemRequirements: {
+            minimum: {
+                os: request.body.minos,
+                memory: request.body.minMemory,
+                processor: request.body.minProcessor,
+                videoCardMemory: request.body.minVideoMem,
+                hardDiskSpace: request.body.minSpace,
+                videoCard: request.body.minVideoCard,
+                sound: request.body.minSound
+            },
+            recommanded: {
+                os: request.body.os,
+                memory: request.body.memory,
+                processor: request.body.processor,
+                videoCardMemory: request.body.videoCardMemory,
+                hardDiskSpace: request.body.space,
+                videoCard: request.body.videoCard,
+                sound: request.body.sound
             }
         }
-    }
-    response.render("gamepage", parameters);
+    });
+    game.save();
+    response.redirect("/admin-portal");
+});
+
+app.get("/games/:gameName", function(request, response){
+    Game.findOne({gameName: "test"}, function(error, game){
+        if(error){
+            console.log(error);
+        } else{
+            let parameters = {
+                gameDetails: game,
+            };
+            response.render("gamepage", parameters);
+        }
+    });
 });
 
 app.get("/profile", function(request, response){

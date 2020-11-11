@@ -1554,7 +1554,7 @@ footer .copyright{
 	overflow: auto;
 }
 .control-panel .col-md-10 h3{
-	margin: 20px 50px;
+	margin: 30px 50px;
 	font-size: 1.4rem;
 	color: #fff;
 	letter-spacing: 1px;
@@ -1565,5 +1565,81 @@ footer .copyright{
 	color: #a9a9a9;
 	letter-spacing: 1px;
 }
+.control-panel .content-list-box{
+	margin: 30px 50px;
+	position: relative;
+} 
+.control-panel .content-list-box > .row{
+	margin: 0px;
+	width: 100%;
+	margin-top: 15px;
+	padding-left: 20px;
+	background-color: #1a2329;
+}
+.control-panel .users .list-item{
+	width: 70px;
+	padding: 10px;
+}
+.control-panel .users .list-item img{
+	border-radius: 50%;
+}
+.control-panel .users .user-name{
+	margin-left: 10px;
+	color: #fff;
+	padding: 20px 0;
+	font-size: 1.2rem;
+}
+.control-panel .users .remove-user{
+	transform: rotateZ(45deg);
+	position: absolute;
+	right: 30px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 2.5rem;
+	color: #f15a24;
+}
+.content-list-box > form h4{
+	color: #f15a24;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-size: 1.2rem;
+}
+.content-list-box > form h5{
+	font-size: 1.05rem;
+	padding-bottom: 10px;
+	padding-top: 1rem;
+}
+.content-list-box > form > div{
+	padding-bottom: 20px;
+}
+.content-list-box .medium-box{
+	width: 35%;
+	margin-right: 5%;
+	margin-top: 1%;
+	padding: 7px 20px;
+	background: var(--main-back-color);
+	color: #fff;
+	border: none;
+}
+.content-list-box .bigbox{
+	width: 75.5%;
+	margin-top: 1%;
+	background: var(--main-back-color);
+	color: #fff;
+	padding: 7px 20px;
+	border: none;
+}
+.submit-data{
+	width: 75.5%;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ef5923;
+    border: none;
+    color: #fff;
+}
+.submit-data:hover{
+	background: #ff4401;
+}
+
 
 
