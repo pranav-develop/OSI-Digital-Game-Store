@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin | Create Account</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <section class="admin-login">
+        <div class="container">
+                <div class="login-box">
+                    <div class="login-head">
+                        <img src="img/back.png" alt="">
+                        <h3>Create Account</h3>
+                    </div>
+                    <form action="/register" method="post">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="fname" placeholder="First Name" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" name="lname" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="text" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="row">
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="row" style="padding-top: 30px;">
+                            <div class="col-md-1" style="padding: 0;">
+                                <input style="margin-left: 45%; margin-top: 0px;" type="checkbox" value="checked" name="agree_to_terms" required>
+                            </div>
+                            <div class="col-md-11" style="font-size: 0.9rem;">
+                                I have read and accept all <a href="#"> Terms & Conditions.</a>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 20px;">
+                            <div class="col text-center">
+                                Have and Account? <a href="/login"> Login Here</a>
+                            </div>
+                        </div>
+                        <button type="submit">Create My Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="stick-bottom">
+        <div class="copyright">
+            <span>Copyright &copy; 2020 &#64; Origin Inc.</span>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.hislide.js" ></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

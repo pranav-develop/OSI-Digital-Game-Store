@@ -14,11 +14,18 @@
                 <div class="login-box">
                     <div class="login-head">
                         <img src="img/back.png" alt="">
-                        <h3>Admin Login</h3>
+                        <h3><%= head %></h3>
                     </div>
-                    <form action="/admin" method="post">
-                        <input type="text" name="admin_username" placeholder="Username" required>
-                        <input type="text" name="admin_password" placeholder="Password" required>
+                    <form action="<%= location %>" method="post">
+                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <% if(location == "/login"){ %>
+                            <div class="row" style="padding-top: 20px;">
+                                <div class="col text-center">
+                                    Don't Have an Account? <a href="/register"> Create Here</a>
+                                </div>
+                            </div>
+                        <% } %>
                         <button type="submit">Login</button>
                     </form>
                 </div>

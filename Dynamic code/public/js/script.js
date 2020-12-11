@@ -256,3 +256,7 @@ function showAdminPages(name){
 		document.querySelector(".control-panel div.control-options:nth-child(4)").classList.remove("active");
 	} 
 }
+
+function showLogout() {
+	document.querySelector(".admin-page .admin-info .logout").classList.toggle("d-none");
+}
